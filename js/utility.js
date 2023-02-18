@@ -1,15 +1,16 @@
-// // mouse over random color
-// function randomColor() {
-//   let color = [];
-//   for (let i = 0; i < 3; i++) {
-//     color.push(Math.floor(Math.random() * 256));
-//   }
-//   return "rgb(" + color.join(", ") + ")";
-// }
+//  mouse over random color
 
-// function makeRandom(id) {
-//   document.getElementById(id).style.backgroundColor = randomColor();
-// }
+function randomColor() {
+  let color = [];
+  for (let i = 0; i < 3; i++) {
+    color.push(Math.floor(Math.random() * 256));
+  }
+  return "rgb(" + color.join(", ") + ")";
+}
+
+function makeRandom(id) {
+  document.getElementById(id).style.backgroundColor = randomColor();
+}
 
 // get input value function
 
@@ -58,11 +59,27 @@ function tableInput(serial, Name, area) {
 
   tr.innerHTML = ` <td>${serial}</td>
    <td>${Name}</td>
-   <td>${area}cm<sup>2</sup></td>
+   <td class="meter" >${area}cm<sup>2</sup></td>
    <td><button 
-   class="btn btn-primary  bg-[#1090D8] border-none" >
+   class="btn btn-primary convert bg-[#1090D8] border-none" >
     Convert to m<sup>2</sup>
     </button></td>`;
 
   tableBody.appendChild(tr);
+ const element= document.querySelectorAll('.convert') 
+ for (const value of element) {
+    value.addEventListener('click',function(event){
+       
+   let centiMeter =event.target.parentNode.parentNode.children[2].innerText ;
+
+                const meter = parseFloat(centiMeter) / 10000 ;
+                event.target.parentNode.parentNode.children[2].innerHTML = `${meter}m<sup>2</sup>`;
+
+
+
+       
+       
+    })
+ }
+
 }
