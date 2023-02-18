@@ -19,25 +19,39 @@ document.getElementById("blog").addEventListener("click", function () {
 // triangle card
 
 document.getElementById("triangle-btn").addEventListener("click", function () {
-  const triangleInputB = getINputValue("triangle-input-b");
-  const triangleInputH = getINputValue("triangle-input-h");
+  const rectangleInputW = getINputValue("triangle-input-b");
+  const rectangleInputL = getINputValue("triangle-input-h");
   const Name = getInnerText("triangle-name");
 
-  const val = validation(triangleInputB,triangleInputH);
-  if(val=== false ){
-    return ;
+  const val = validation(rectangleInputW, rectangleInputL);
+  if (val === false) {
+    return;
   }
 
+  serial++;
+  const rectangleAreaResult = 0.5 * rectangleInputW * rectangleInputL;
 
- serial++;
-  const triangleAreaResult = 0.5 * triangleInputB * triangleInputH;
+  const rectangleArea = isFloat(rectangleAreaResult);
 
-  const triangleArea = isFloat(triangleAreaResult);
+  tableInput(serial, Name, rectangleArea);
+});
 
-  //  console.log(triangleArea);
+// rectangle card
 
+document.getElementById("rectangle-btn").addEventListener("click", function () {
+  const rectangleInputW = getINputValue("rectangle-input-w");
+  const rectangleInputL = getINputValue("rectangle-input-l");
+  const Name = getInnerText("rectangle-name");
 
-  tableInput(serial,Name,triangleArea);
+  const val = validation(rectangleInputW, rectangleInputL);
+  if (val === false) {
+    return;
+  }
 
-  
+  serial++;
+  const rectangleAreaResult = rectangleInputW * rectangleInputL;
+
+  const rectangleArea = isFloat(rectangleAreaResult);
+
+  tableInput(serial, Name, rectangleArea);
 });
