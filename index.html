@@ -171,10 +171,10 @@
               class="card w-full bg-[#FFFFFF] drop-shadow-lg border random"
             >
               <figure class="px-10 pt-10">
-                <img src="./images/rhombus.png" alt="triangle" class="" />
+                <img src="./images/rhombus.png" alt="rhombus" class="" />
               </figure>
               <div class="card-body items-center text-center">
-                <h2 class="card-title text-2xl">Rhombus</h2>
+                <h2 id="rhombus-name" class="card-title text-2xl">Rhombus</h2>
                 <p>
                   Area(A)= 0.5 <i class="fa-solid fa-xmark"></i> d <sub>1</sub>
                   <i class="fa-solid fa-xmark"></i> d <sub>2</sub>
@@ -184,7 +184,7 @@
                     class="w-20 border bg-[#F1F1F1] mx-2 px-2"
                     type="text"
                     name=""
-                    id=""
+                    id="rhombus-input-d1"
                     placeholder="d1"
                   />
                   <span class="">cm</span>
@@ -193,13 +193,13 @@
                     class="w-20 border bg-[#F1F1F1] mx-2 px-2"
                     type="text"
                     name=""
-                    id=""
+                    id="rhombus-input-d2"
                     placeholder="d2"
                   />
                   <span class="">cm</span>
                 </div>
 
-                <button
+                <button id="rhombus-btn"
                   class="btn btn-primary mt-9 px-14 xl:px-20 bg-[#1090D8] border-none"
                 >
                   Calculate

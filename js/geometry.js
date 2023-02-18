@@ -76,3 +76,23 @@ document.getElementById("parallelogram-btn").addEventListener("click", function 
 
   tableInput(serial, Name, parallelogramArea);
 });
+
+// Rhombus card 
+
+document.getElementById("rhombus-btn").addEventListener("click", function () {
+  const rhombusInputD1 = getINputValue("rhombus-input-d1");
+  const rhombusInputD2 = getINputValue("rhombus-input-d2");
+  const Name = getInnerText("rhombus-name");
+
+  const val = validation(rhombusInputD1, rhombusInputD2);
+  if (val === false) {
+    return;
+  }
+
+  serial++;
+  const rhombusAreaResult = 0.5 * rhombusInputD1 * rhombusInputD2;
+
+  const rhombusArea = isFloat(rhombusAreaResult);
+
+  tableInput(serial, Name, rhombusArea);
+});
