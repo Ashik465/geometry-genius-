@@ -19,21 +19,21 @@ document.getElementById("blog").addEventListener("click", function () {
 // triangle card
 
 document.getElementById("triangle-btn").addEventListener("click", function () {
-  const rectangleInputW = getINputValue("triangle-input-b");
-  const rectangleInputL = getINputValue("triangle-input-h");
+  const triangleInputB = getINputValue("triangle-input-b");
+  const triangleInputH = getINputValue("triangle-input-h");
   const Name = getInnerText("triangle-name");
 
-  const val = validation(rectangleInputW, rectangleInputL);
+  const val = validation(triangleInputB, triangleInputH);
   if (val === false) {
     return;
   }
 
   serial++;
-  const rectangleAreaResult = 0.5 * rectangleInputW * rectangleInputL;
+  const triangleAreaResult = 0.5 * triangleInputB * triangleInputH;
 
-  const rectangleArea = isFloat(rectangleAreaResult);
+  const triangleArea = isFloat(triangleAreaResult);
 
-  tableInput(serial, Name, rectangleArea);
+  tableInput(serial, Name, triangleArea);
 });
 
 // rectangle card
@@ -54,4 +54,25 @@ document.getElementById("rectangle-btn").addEventListener("click", function () {
   const rectangleArea = isFloat(rectangleAreaResult);
 
   tableInput(serial, Name, rectangleArea);
+});
+
+
+// Parallelogram card 
+
+document.getElementById("parallelogram-btn").addEventListener("click", function () {
+  const parallelogramInputB = getINputValue("parallelogram-input-b");
+  const parallelogramInputH = getINputValue("parallelogram-input-h");
+  const Name = getInnerText("parallelogram-name");
+
+  const val = validation(parallelogramInputB, parallelogramInputH);
+  if (val === false) {
+    return;
+  }
+
+  serial++;
+  const parallelogramAreaResult = parallelogramInputB * parallelogramInputH;
+
+  const parallelogramArea = isFloat(parallelogramAreaResult);
+
+  tableInput(serial, Name, parallelogramArea);
 });
