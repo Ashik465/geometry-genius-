@@ -56,28 +56,29 @@ document.getElementById("rectangle-btn").addEventListener("click", function () {
   tableInput(serial, Name, rectangleArea);
 });
 
+// Parallelogram card
 
-// Parallelogram card 
+document
+  .getElementById("parallelogram-btn")
+  .addEventListener("click", function () {
+    const parallelogramInputB = getINputValue("parallelogram-input-b");
+    const parallelogramInputH = getINputValue("parallelogram-input-h");
+    const Name = getInnerText("parallelogram-name");
 
-document.getElementById("parallelogram-btn").addEventListener("click", function () {
-  const parallelogramInputB = getINputValue("parallelogram-input-b");
-  const parallelogramInputH = getINputValue("parallelogram-input-h");
-  const Name = getInnerText("parallelogram-name");
+    const val = validation(parallelogramInputB, parallelogramInputH);
+    if (val === false) {
+      return;
+    }
 
-  const val = validation(parallelogramInputB, parallelogramInputH);
-  if (val === false) {
-    return;
-  }
+    serial++;
+    const parallelogramAreaResult = parallelogramInputB * parallelogramInputH;
 
-  serial++;
-  const parallelogramAreaResult = parallelogramInputB * parallelogramInputH;
+    const parallelogramArea = isFloat(parallelogramAreaResult);
 
-  const parallelogramArea = isFloat(parallelogramAreaResult);
+    tableInput(serial, Name, parallelogramArea);
+  });
 
-  tableInput(serial, Name, parallelogramArea);
-});
-
-// Rhombus card 
+// Rhombus card
 
 document.getElementById("rhombus-btn").addEventListener("click", function () {
   const rhombusInputD1 = getINputValue("rhombus-input-d1");
@@ -97,7 +98,7 @@ document.getElementById("rhombus-btn").addEventListener("click", function () {
   tableInput(serial, Name, rhombusArea);
 });
 
-// Pentagon card 
+// Pentagon card
 
 document.getElementById("pentagon-btn").addEventListener("click", function () {
   const pentagonInputP = getINputValue("pentagon-input-p");
@@ -117,8 +118,7 @@ document.getElementById("pentagon-btn").addEventListener("click", function () {
   tableInput(serial, Name, pentagonArea);
 });
 
-
-// Ellipse card 
+// Ellipse card
 
 document.getElementById("ellipse-btn").addEventListener("click", function () {
   const ellipseInputA = getINputValue("ellipse-input-a");
@@ -131,7 +131,7 @@ document.getElementById("ellipse-btn").addEventListener("click", function () {
   }
 
   serial++;
-  const pi =3.1416
+  const pi = 3.14;
   const ellipseAreaResult = pi * ellipseInputA * ellipseInputB;
 
   const ellipseArea = isFloat(ellipseAreaResult);
