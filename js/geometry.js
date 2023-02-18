@@ -96,3 +96,44 @@ document.getElementById("rhombus-btn").addEventListener("click", function () {
 
   tableInput(serial, Name, rhombusArea);
 });
+
+// Pentagon card 
+
+document.getElementById("pentagon-btn").addEventListener("click", function () {
+  const pentagonInputP = getINputValue("pentagon-input-p");
+  const pentagonInputB = getINputValue("pentagon-input-b");
+  const Name = getInnerText("pentagon-name");
+
+  const val = validation(pentagonInputP, pentagonInputB);
+  if (val === false) {
+    return;
+  }
+
+  serial++;
+  const pentagonAreaResult = 0.5 * pentagonInputP * pentagonInputB;
+
+  const pentagonArea = isFloat(pentagonAreaResult);
+
+  tableInput(serial, Name, pentagonArea);
+});
+
+
+// Ellipse card 
+
+document.getElementById("ellipse-btn").addEventListener("click", function () {
+  const pentagonInputP = getINputValue("ellipse-input-a");
+  const pentagonInputB = getINputValue("ellipse-input-b");
+  const Name = getInnerText("ellipse-name");
+
+  const val = validation(pentagonInputP, pentagonInputB);
+  if (val === false) {
+    return;
+  }
+
+  serial++;
+  const pentagonAreaResult = 0.5 * pentagonInputP * pentagonInputB;
+
+  const pentagonArea = isFloat(pentagonAreaResult);
+
+  tableInput(serial, Name, pentagonArea);
+});
