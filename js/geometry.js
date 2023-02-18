@@ -121,19 +121,20 @@ document.getElementById("pentagon-btn").addEventListener("click", function () {
 // Ellipse card 
 
 document.getElementById("ellipse-btn").addEventListener("click", function () {
-  const pentagonInputP = getINputValue("ellipse-input-a");
-  const pentagonInputB = getINputValue("ellipse-input-b");
+  const ellipseInputA = getINputValue("ellipse-input-a");
+  const ellipseInputB = getINputValue("ellipse-input-b");
   const Name = getInnerText("ellipse-name");
 
-  const val = validation(pentagonInputP, pentagonInputB);
+  const val = validation(ellipseInputA, ellipseInputB);
   if (val === false) {
     return;
   }
 
   serial++;
-  const pentagonAreaResult = 0.5 * pentagonInputP * pentagonInputB;
+  const pi =3.1416
+  const ellipseAreaResult = pi * ellipseInputA * ellipseInputB;
 
-  const pentagonArea = isFloat(pentagonAreaResult);
+  const ellipseArea = isFloat(ellipseAreaResult);
 
-  tableInput(serial, Name, pentagonArea);
+  tableInput(serial, Name, ellipseArea);
 });
