@@ -16,6 +16,25 @@ document.getElementById("blog").addEventListener("click", function () {
   window.location.href = "blog.html";
 });
 
+// clicking edit button
+document.getElementById("edit-btn").addEventListener("click", function () {
+  const edit = document.getElementById("edit");
+  edit.removeAttribute("class");
+
+  document.getElementById("check-btn").removeAttribute("style");
+});
+
+// clicking check box
+
+const myCheckbox = document.getElementById("check");
+const myElement = document.getElementById("check-btn");
+
+myCheckbox.addEventListener("click", function () {
+  myElement.style.display = "none";
+
+  
+});
+
 // triangle card
 
 document.getElementById("triangle-btn").addEventListener("click", function () {
